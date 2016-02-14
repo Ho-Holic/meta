@@ -44,9 +44,7 @@
 \newcommand{\namesection}[1]{ % title with name
 \centering{ % Center the name
 \fontsize{40pt}{60pt} % Font size
-\selectfont #1
+\fontspec[Path = ../fonts/monofur/]{monof55}\selectfont #1
 }\\[10pt] 
-\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}} % Horizontal split line
-%\noindent\makebox[\linewidth]{\color{headings}\rule{\paperwidth}{0.4pt}} % Horizontal rule
-%\vspace{-5pt} % Reduce whitespace after the rule slightly
+\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.6pt}} % Horizontal split line
 }
