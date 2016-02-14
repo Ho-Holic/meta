@@ -12,6 +12,12 @@
 
 \LoadClass[titlepage]{article} % Load LaTeX's article class with the `titlepage' option so that \maketitle creates a title page, not just a title block
 
+%----------------------------------------------------------------------------------------
+% PAGE FORMATTING
+%----------------------------------------------------------------------------------------
+
+\usepackage[hmargin=1.25cm, vmargin=0.75cm]{geometry} % Specifies horizontal and vertical page margins
+
 \setcounter{secnumdepth}{-1} % Remove the numbers from all the headings (\section, \subsection, etc.)
 
 %----------------------------------------------------------------------------------------
@@ -37,6 +43,10 @@
 
 \newcommand{\namesection}[1]{ % title with name
 \centering{ % Center the name
-#1
-}\\[5pt] 
+\fontsize{40pt}{60pt} % Font size
+\selectfont #1
+}\\[10pt] 
+\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}} % Horizontal split line
+%\noindent\makebox[\linewidth]{\color{headings}\rule{\paperwidth}{0.4pt}} % Horizontal rule
+%\vspace{-5pt} % Reduce whitespace after the rule slightly
 }
