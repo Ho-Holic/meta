@@ -50,11 +50,16 @@
 \newcommand{\namesection}[1]{ % title with name
 \centering{ % Center the name
 \fontsize{40pt}{60pt} % Font size
-\fontspec[Path = ../fonts/monofur/]{monof55}
+\fontspec[Path = ../fonts/ubuntu/]{Ubuntu-L}
 \selectfont #1
 }\\[10pt] 
 \noindent\makebox[\linewidth]{\rule{\paperwidth}{0.6pt}} % Horizontal split line
 }
+
+%----------------------------------------------------------------------------------------
+%   CONTENT TEXT 
+%----------------------------------------------------------------------------------------
+\setmainfont[Path = ../fonts/ubuntu/]{Ubuntu-L} % The primary font for content text; defines bold, italic and bold-italic as well
 
 %----------------------------------------------------------------------------------------
 %   SECTION 
@@ -65,7 +70,7 @@
 \titleformat{\section}{ 
 %\color{headings}
 %\scshape
-\fontspec[Path = ../fonts/monofur/]{monof55}
+\fontspec[Path = ../fonts/ubuntu/]{Ubuntu-L}
 \fontsize{16pt}{24pt}
 \selectfont
 %\raggedright
@@ -80,7 +85,7 @@
 
 \titleformat{\subsection}{
 %\color{subheadings}
-\fontspec[Path = ../fonts/monofur/]{monof55}
+\fontspec[Path = ../fonts/ubuntu/]{Ubuntu-L}
 \fontsize{12pt}{12pt}
 \selectfont
 %\bfseries
