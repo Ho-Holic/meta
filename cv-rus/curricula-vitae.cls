@@ -91,3 +91,13 @@
 %\bfseries
 %\uppercase
 }{}{0em}{}
+
+%----------------------------------------------------------------------------------------
+%   SUBSECTION 
+%----------------------------------------------------------------------------------------
+
+\newcommand{\mainsubsection}[1]{ % Used for creating subsections where a description is required on the same line
+\color{subheadings}\fontspec[Path = ../fonts/ubuntu/]{Ubuntu-L}\fontsize{12pt}{12pt}\selectfont\bfseries\uppercase {#1} \normalfont}
+
+\newcommand{\addinfo}[1]{ % Used for describing the subsection either on the same line or underneath
+\color{subheadings}\raggedright\scshape\fontspec[Path = ../fonts/ubuntu/]{Ubuntu-L}\fontsize{11pt}{13pt}\selectfont {#1 \\} \normalfont}
