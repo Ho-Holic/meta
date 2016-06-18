@@ -96,8 +96,41 @@
 %   SUBSECTION 
 %----------------------------------------------------------------------------------------
 
-\newcommand{\mainsubsection}[1]{ % Used for creating subsections where a description is required on the same line
-\color{subheadings}\fontspec[Path = ../fonts/ubuntu/]{Ubuntu-L}\fontsize{12pt}{12pt}\selectfont\bfseries\uppercase {#1} \normalfont}
+% Used for creating subsections where a description is required on the same line
+\newcommand{\mainsubsection}[1]{ 
+\color{subheadings}
+\fontspec[Path = ../fonts/ubuntu/]{Ubuntu-L}
+\fontsize{12pt}{12pt}
+\selectfont {#1} 
+\normalfont
+}
 
-\newcommand{\addinfo}[1]{ % Used for describing the subsection either on the same line or underneath
-\color{subheadings}\raggedright\scshape\fontspec[Path = ../fonts/ubuntu/]{Ubuntu-L}\fontsize{11pt}{13pt}\selectfont {#1 \\} \normalfont}
+% Used for describing the subsection either on the same line or underneath
+\newcommand{\addinfo}[1]{ 
+\color{subheadings}
+\raggedright
+\scshape
+\fontspec[Path = ../fonts/ubuntu/]{Ubuntu-L}
+\fontsize{11pt}{13pt}
+\selectfont {#1 \\} 
+\normalfont
+}
+
+% Used for specifying a duration and/or location under a subsection
+\newcommand{\workperiod}[1]{ 
+\color{headings}
+\raggedright
+\fontspec[Path = ../fonts/ubuntu/]{Ubuntu-L}
+\fontsize{10pt}{12pt}
+\selectfont {#1\\} 
+\normalfont
+}
+
+%----------------------------------------------------------------------------------------
+%   ITEMS 
+%----------------------------------------------------------------------------------------
+
+% Defines the tightitemize environment which modifies the itemize environment to be more compact
+\newenvironment{tightitemize} 
+{\vspace{-\topsep}\begin{itemize}\itemsep1pt \parskip0pt \parsep0pt}
+{\end{itemize}\vspace{-\topsep}}
