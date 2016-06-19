@@ -69,7 +69,6 @@
 
 \titleformat{\section}{ 
 %\color{headings}
-%\scshape
 \fontspec[Path = ../fonts/ubuntu/]{Ubuntu-L}
 \fontsize{16pt}{24pt}
 \selectfont
@@ -98,7 +97,7 @@
 
 % Used for creating subsections where a description is required on the same line
 \newcommand{\mainsubsection}[1]{ 
-\color{subheadings}
+%\color{subheadings}
 \fontspec[Path = ../fonts/ubuntu/]{Ubuntu-L}
 \fontsize{12pt}{12pt}
 \selectfont {#1} 
@@ -107,9 +106,8 @@
 
 % Used for describing the subsection either on the same line or underneath
 \newcommand{\addinfo}[1]{ 
-\color{subheadings}
+%\color{subheadings}
 \raggedright
-\scshape
 \fontspec[Path = ../fonts/ubuntu/]{Ubuntu-L}
 \fontsize{11pt}{13pt}
 \selectfont {#1 \\} 
@@ -118,7 +116,7 @@
 
 % Used for specifying a duration and/or location under a subsection
 \newcommand{\workperiod}[1]{ 
-\color{headings}
+%\color{headings}
 \raggedright
 \fontspec[Path = ../fonts/ubuntu/]{Ubuntu-L}
 \fontsize{10pt}{12pt}
