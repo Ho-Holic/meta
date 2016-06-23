@@ -11,7 +11,7 @@
 \LoadClass[titlepage]{article} % Load LaTeX's article class with the `titlepage' option so that \maketitle creates a title page, not just a title block
 
 %----------------------------------------------------------------------------------------
-% PAGE FORMATTING
+%  PAGE FORMATTING
 %----------------------------------------------------------------------------------------
 
 \usepackage[hmargin=1.25cm, vmargin=0.75cm]{geometry} % specify horizontal and vertical page margins
@@ -19,7 +19,7 @@
 \setcounter{secnumdepth}{-1} % Remove the numbers from all the headings (\section, \subsection, etc.)
 
 %----------------------------------------------------------------------------------------
-% PACKAGES
+%  PACKAGES
 %----------------------------------------------------------------------------------------
 
 \usepackage{fontspec} % Required for specifying custom fonts in XeLaTeX
@@ -27,7 +27,7 @@
 %\usepackage{color} % Enable colors
 
 %----------------------------------------------------------------------------------------
-% COLORS
+%  COLORS
 %----------------------------------------------------------------------------------------
 
 %\definecolor{primary}{HTML}{2b2b2b} % The primary document color for content text
@@ -38,13 +38,13 @@
 
 
 %----------------------------------------------------------------------------------------
-% GENERIC COMMANDS
+%  GENERIC COMMANDS
 %----------------------------------------------------------------------------------------
 
 \newcommand{\insertspace}{\vspace{8pt}} % More common space
 
 %----------------------------------------------------------------------------------------
-% TITLE
+%  TITLE
 %----------------------------------------------------------------------------------------
 
 \newcommand{\namesection}[1]{ % title with name
@@ -57,12 +57,12 @@
 }
 
 %----------------------------------------------------------------------------------------
-%   CONTENT TEXT 
+%  CONTENT TEXT 
 %----------------------------------------------------------------------------------------
 \setmainfont[Path = ../fonts/ubuntu/]{Ubuntu-L} % The primary font for content text; defines bold, italic and bold-italic as well
 
 %----------------------------------------------------------------------------------------
-%   SECTION 
+%  SECTION 
 %----------------------------------------------------------------------------------------
 
 \titlespacing{\section}{0pt}{0pt}{0pt} % no spacing for section
@@ -77,7 +77,7 @@
 }{}{0em}{}
 
 %----------------------------------------------------------------------------------------
-%   SUBSECTION 
+%  SUBSECTION 
 %----------------------------------------------------------------------------------------
 
 \titlespacing{\subsection}{0pt}{0pt}{0pt} % no spacing for subsection
@@ -92,7 +92,7 @@
 }{}{0em}{}
 
 %----------------------------------------------------------------------------------------
-%   SUBSECTION 
+%  SUBSECTION 
 %----------------------------------------------------------------------------------------
 
 % Used for creating subsections where a description is required on the same line
@@ -110,7 +110,7 @@
 \raggedright
 \fontspec[Path = ../fonts/ubuntu/]{Ubuntu-L}
 \fontsize{11pt}{13pt}
-\selectfont {#1 \\} 
+\selectfont {\hfill#1 \\} 
 \normalfont
 }
 
@@ -125,7 +125,7 @@
 }
 
 %----------------------------------------------------------------------------------------
-%   ITEMS 
+%  ITEMS 
 %----------------------------------------------------------------------------------------
 
 % Defines the tightitemize environment which modifies the itemize environment to be more compact
