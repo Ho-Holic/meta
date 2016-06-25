@@ -11,23 +11,41 @@
 \LoadClass[titlepage]{article} % Load LaTeX's article class with the `titlepage' option so that \maketitle creates a title page, not just a title block
 
 %----------------------------------------------------------------------------------------
-%  PAGE FORMATTING
+%  Page Formatting
 %----------------------------------------------------------------------------------------
 
-\usepackage[hmargin=1.25cm, vmargin=0.75cm]{geometry} % specify horizontal and vertical page margins
+\usepackage{geometry} % specify horizontal and vertical page margins
 
 \setcounter{secnumdepth}{-1} % Remove the numbers from all the headings (\section, \subsection, etc.)
 
 %----------------------------------------------------------------------------------------
-%  PACKAGES
+%  Packages
 %----------------------------------------------------------------------------------------
 
 \usepackage{fontspec} % Required for specifying custom fonts in XeLaTeX
 \usepackage{titlesec} % Required for customizing section/subsection/etc titles
 %\usepackage{color} % Enable colors
+\usepackage{fancyhdr}
+
+%---------------------------------------------------------------------------------------
+%  Конфигурация страницы
+%---------------------------------------------------------------------------------------
+% Page Layout
+% Configure page margins with geometry
+\geometry{left=2.0cm, top=1.5cm, right=2.0cm, bottom=2.0cm, footskip=.5cm}
+
+% Header & Footer
+% Set offset to each header and footer
+\fancyhfoffset{0em}
+% Remove head rule
+\renewcommand{\headrulewidth}{0pt}
+% Clear all header & footer fields
+\fancyhf{}
+% Enable if you want to make header or footer using fancyhdr
+\pagestyle{fancy}
 
 %----------------------------------------------------------------------------------------
-%  COLORS
+%  Цвета
 %----------------------------------------------------------------------------------------
 
 %\definecolor{primary}{HTML}{2b2b2b} % The primary document color for content text
@@ -38,31 +56,40 @@
 
 
 %----------------------------------------------------------------------------------------
-%  GENERIC COMMANDS
+%  Общие комманды
 %----------------------------------------------------------------------------------------
 
-\newcommand{\insertspace}{\vspace{8pt}} % More common space
+\newcommand{\insertspace}{\vspace{8pt}} % Добавить сюда немного отступа, детка
 
 %----------------------------------------------------------------------------------------
-%  TITLE
+%  Заголовок и подвал
 %----------------------------------------------------------------------------------------
 
-\newcommand{\namesection}[1]{ % title with name
+% заголовок
+\newcommand{\namesection}[1]{ 
 \centering{ % Center the name
 \fontsize{40pt}{60pt} % Font size
 \fontspec[Path = ../fonts/ubuntu/]{Ubuntu-L}
 \selectfont #1
 }\\[10pt] 
-\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.6pt}} % Horizontal split line
+%\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.6pt}} % разделительная черта (пока не нравится как выглядит)
+}
+
+% подвал
+\newcommand{\footersection}[3]{
+\fancyfoot{}
+\fancyfoot[L]{#1}
+\fancyfoot[C]{#2}
+\fancyfoot[R]{#3}   
 }
 
 %----------------------------------------------------------------------------------------
-%  CONTENT TEXT 
+%  Content 
 %----------------------------------------------------------------------------------------
 \setmainfont[Path = ../fonts/ubuntu/]{Ubuntu-L} % The primary font for content text; defines bold, italic and bold-italic as well
 
 %----------------------------------------------------------------------------------------
-%  SECTION 
+%  Section 
 %----------------------------------------------------------------------------------------
 
 \titlespacing{\section}{0pt}{0pt}{0pt} % no spacing for section
@@ -77,7 +104,7 @@
 }{}{0em}{}
 
 %----------------------------------------------------------------------------------------
-%  SUBSECTION 
+%  Subsection 
 %----------------------------------------------------------------------------------------
 
 \titlespacing{\subsection}{0pt}{0pt}{0pt} % no spacing for subsection
@@ -92,7 +119,7 @@
 }{}{0em}{}
 
 %----------------------------------------------------------------------------------------
-%  SUBSECTION 
+%  Subsection in right column (refactor this) 
 %----------------------------------------------------------------------------------------
 
 % Used for creating subsections where a description is required on the same line
@@ -125,7 +152,7 @@
 }
 
 %----------------------------------------------------------------------------------------
-%  ITEMS 
+%  Items 
 %----------------------------------------------------------------------------------------
 
 % Defines the tightitemize environment which modifies the itemize environment to be more compact
