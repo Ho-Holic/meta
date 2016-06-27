@@ -45,6 +45,21 @@
 \pagestyle{fancy}
 
 %----------------------------------------------------------------------------------------
+%  Шрифты
+%----------------------------------------------------------------------------------------
+
+% Папку со шрифтами
+\def\@fontdir{../fonts/ubuntu/}
+
+\def\@namefont{Ubuntu-L}
+\def\@contentfont{Ubuntu-L}
+\def\@sectionfont{Ubuntu-L}
+\def\@subsectionfont{Ubuntu-L}
+\def\@mainsubsectionfont{Ubuntu-L}
+\def\@addinfofont{Ubuntu-L}
+\def\@workperiodfont{Ubuntu-L}
+
+%----------------------------------------------------------------------------------------
 %  Цвета
 %----------------------------------------------------------------------------------------
 
@@ -53,13 +68,12 @@
 %\definecolor{subheadings}{HTML}{333333} % The color of subsections and places worked/studied
 %\definecolor{date}{HTML}{666666} % The color used for the Last Updated text at the top right
 
-
-
 %----------------------------------------------------------------------------------------
 %  Общие комманды
 %----------------------------------------------------------------------------------------
 
-\newcommand{\insertspace}{\vspace{8pt}} % Добавить сюда немного отступа, детка
+% Добавить сюда немного отступа, детка
+\newcommand{\insertspace}{\vspace{8pt}} 
 
 %----------------------------------------------------------------------------------------
 %  Заголовок и подвал
@@ -69,7 +83,7 @@
 \newcommand{\namesection}[1]{ 
 \centering{ % Center the name
 \fontsize{40pt}{60pt} % Font size
-\fontspec[Path = ../fonts/ubuntu/]{Ubuntu-L}
+\fontspec[Path = \@fontdir]{\@namefont}
 \selectfont #1
 }\\[10pt] 
 %\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.6pt}} % разделительная черта (пока не нравится как выглядит)
@@ -86,7 +100,7 @@
 %----------------------------------------------------------------------------------------
 %  Content 
 %----------------------------------------------------------------------------------------
-\setmainfont[Path = ../fonts/ubuntu/]{Ubuntu-L} % The primary font for content text; defines bold, italic and bold-italic as well
+\setmainfont[Path = \@fontdir]{\@contentfont} % The primary font for content text; defines bold, italic and bold-italic as well
 
 %----------------------------------------------------------------------------------------
 %  Section 
@@ -96,7 +110,7 @@
 
 \titleformat{\section}{ 
 %\color{headings}
-\fontspec[Path = ../fonts/ubuntu/]{Ubuntu-L}
+\fontspec[Path = \@fontdir]{\@sectionfont}
 \fontsize{16pt}{24pt}
 \selectfont
 %\raggedright
@@ -111,7 +125,7 @@
 
 \titleformat{\subsection}{
 %\color{subheadings}
-\fontspec[Path = ../fonts/ubuntu/]{Ubuntu-L}
+\fontspec[Path = \@fontdir]{\@subsectionfont}
 \fontsize{12pt}{12pt}
 \selectfont
 %\bfseries
@@ -125,7 +139,7 @@
 % Used for creating subsections where a description is required on the same line
 \newcommand{\mainsubsection}[1]{ 
 %\color{subheadings}
-\fontspec[Path = ../fonts/ubuntu/]{Ubuntu-L}
+\fontspec[Path = \@fontdir]{\@mainsubsectionfont}
 \fontsize{12pt}{12pt}
 \selectfont {#1} 
 \normalfont
@@ -135,7 +149,7 @@
 \newcommand{\addinfo}[1]{ 
 %\color{subheadings}
 \raggedright
-\fontspec[Path = ../fonts/ubuntu/]{Ubuntu-L}
+\fontspec[Path = \@fontdir]{\@addinfofont}
 \fontsize{11pt}{13pt}
 \selectfont {\hfill#1 \\} 
 \normalfont
@@ -145,7 +159,7 @@
 \newcommand{\workperiod}[1]{ 
 %\color{headings}
 \raggedright
-\fontspec[Path = ../fonts/ubuntu/]{Ubuntu-L}
+\fontspec[Path = \@fontdir]{\@workperiodfont}
 \fontsize{10pt}{12pt}
 \selectfont {#1\\} 
 \normalfont
