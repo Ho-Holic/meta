@@ -63,10 +63,13 @@
 %  Цвета
 %----------------------------------------------------------------------------------------
 
-%\definecolor{primary}{HTML}{2b2b2b} % The primary document color for content text
-%\definecolor{headings}{HTML}{6A6A6A} % The color of the large sections
-%\definecolor{subheadings}{HTML}{333333} % The color of subsections and places worked/studied
-%\definecolor{date}{HTML}{666666} % The color used for the Last Updated text at the top right
+\usepackage[usenames,dvipsnames]{xcolor} % Required for custom colors
+
+\definecolor{primary}{HTML}{2b2b2b} % The primary document color for content text
+\definecolor{headings}{HTML}{6A6A6A} % The color of the large sections
+\definecolor{subheadings}{HTML}{333333} % The color of subsections and places worked/studied
+
+\definecolor{footercolor}{HTML}{666666} % Цвет футера
 
 %----------------------------------------------------------------------------------------
 %  Общие комманды
@@ -92,9 +95,9 @@
 % подвал
 \newcommand{\footersection}[3]{
 \fancyfoot{}
-\fancyfoot[L]{#1}
-\fancyfoot[C]{#2}
-\fancyfoot[R]{#3}   
+\fancyfoot[L]{\color{footercolor}#1}
+\fancyfoot[C]{\color{footercolor}#2}
+\fancyfoot[R]{\color{footercolor}#3}   
 }
 
 %----------------------------------------------------------------------------------------
