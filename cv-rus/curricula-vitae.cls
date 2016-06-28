@@ -24,7 +24,7 @@
 
 \usepackage{fontspec} % Required for specifying custom fonts in XeLaTeX
 \usepackage{titlesec} % Required for customizing section/subsection/etc titles
-%\usepackage{color} % Enable colors
+\usepackage{color} % Enable colors
 \usepackage{fancyhdr}
 
 %---------------------------------------------------------------------------------------
@@ -156,12 +156,12 @@
 }
 
 % Used for specifying a duration and/or location under a subsection
-\newcommand{\workperiod}[1]{ 
+\newcommand{\workperiod}[2]{ 
 %\color{headings}
 \raggedright
 \fontspec[Path = \@fontdir]{\@workperiodfont}
 \fontsize{10pt}{12pt}
-\selectfont {#1\\} 
+\selectfont {#1\hfill#2\\} 
 \normalfont
 }
 
