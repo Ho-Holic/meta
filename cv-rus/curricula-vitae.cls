@@ -11,17 +11,10 @@
 \LoadClass[titlepage]{article} % Load LaTeX's article class with the `titlepage' option so that \maketitle creates a title page, not just a title block
 
 %----------------------------------------------------------------------------------------
-%  Page Formatting
-%----------------------------------------------------------------------------------------
-
-\usepackage{geometry} % specify horizontal and vertical page margins
-
-\setcounter{secnumdepth}{-1} % Remove the numbers from all the headings (\section, \subsection, etc.)
-
-%----------------------------------------------------------------------------------------
 %  Packages
 %----------------------------------------------------------------------------------------
 
+\usepackage{geometry} % specify horizontal and vertical page margins
 \usepackage{fontspec} % Required for specifying custom fonts in XeLaTeX
 \usepackage{titlesec} % Required for customizing section/subsection/etc titles
 \usepackage{color} % Enable colors
@@ -30,6 +23,8 @@
 %---------------------------------------------------------------------------------------
 %  Конфигурация страницы
 %---------------------------------------------------------------------------------------
+
+\setcounter{secnumdepth}{-1} % Remove the numbers from all the headings (\section, \subsection, etc.)
 % Page Layout
 % Configure page margins with geometry
 \geometry{left=2.0cm, top=1.5cm, right=2.0cm, bottom=2.0cm, footskip=.5cm}
@@ -65,11 +60,11 @@
 
 \usepackage[usenames,dvipsnames]{xcolor} % Required for custom colors
 
-\definecolor{primary}{HTML}{2b2b2b} % The primary document color for content text
-\definecolor{headings}{HTML}{6A6A6A} % The color of the large sections
-\definecolor{subheadings}{HTML}{333333} % The color of subsections and places worked/studied
-
+\definecolor{workperiodcolor}{HTML}{6A6A6A} % The color of the large sections
+\definecolor{sectioncolor}{HTML}{6A6A6A} % The color of the large sections
 \definecolor{footercolor}{HTML}{666666} % Цвет футера
+\definecolor{subsectioncolor}{HTML}{333333} % The color of subsections and places worked/studied
+\definecolor{contentcolor}{HTML}{2b2b2b} % The primary document color for content text
 
 %----------------------------------------------------------------------------------------
 %  Общие комманды
@@ -103,7 +98,9 @@
 %----------------------------------------------------------------------------------------
 %  Content 
 %----------------------------------------------------------------------------------------
-\setmainfont[Path = \@fontdir]{\@contentfont} % The primary font for content text; defines bold, italic and bold-italic as well
+\setmainfont[Color=contentcolor, Path = \@fontdir]{\@contentfont}
+
+%\setmainfont[Color=primary, Path = fonts/lato/,BoldItalicFont=Lato-RegIta,BoldFont=Lato-Reg,ItalicFont=Lato-LigIta]{Lato-Lig} % The primary 
 
 %----------------------------------------------------------------------------------------
 %  Section 
@@ -112,7 +109,7 @@
 \titlespacing{\section}{0pt}{0pt}{0pt} % no spacing for section
 
 \titleformat{\section}{ 
-%\color{headings}
+\color{sectioncolor}
 \fontspec[Path = \@fontdir]{\@sectionfont}
 \fontsize{16pt}{24pt}
 \selectfont
@@ -127,7 +124,7 @@
 \titlespacing{\subsection}{0pt}{0pt}{0pt} % no spacing for subsection
 
 \titleformat{\subsection}{
-%\color{subheadings}
+\color{subsectioncolor}
 \fontspec[Path = \@fontdir]{\@subsectionfont}
 \fontsize{12pt}{12pt}
 \selectfont
@@ -141,7 +138,7 @@
 
 % Used for creating subsections where a description is required on the same line
 \newcommand{\mainsubsection}[1]{ 
-%\color{subheadings}
+\color{subsectioncolor}
 \fontspec[Path = \@fontdir]{\@mainsubsectionfont}
 \fontsize{12pt}{12pt}
 \selectfont {#1} 
@@ -150,7 +147,7 @@
 
 % Used for describing the subsection either on the same line or underneath
 \newcommand{\addinfo}[1]{ 
-%\color{subheadings}
+\color{subsectioncolor}
 \raggedright
 \fontspec[Path = \@fontdir]{\@addinfofont}
 \fontsize{11pt}{13pt}
@@ -160,7 +157,7 @@
 
 % Used for specifying a duration and/or location under a subsection
 \newcommand{\workperiod}[2]{ 
-%\color{headings}
+\color{workperiodcolor}
 \raggedright
 \fontspec[Path = \@fontdir]{\@workperiodfont}
 \fontsize{10pt}{12pt}
