@@ -62,7 +62,7 @@
 
 \definecolor{workperiodcolor}{HTML}{6A6A6A} % The color of the large sections
 \definecolor{sectioncolor}{HTML}{6A6A6A} % The color of the large sections
-\definecolor{footercolor}{HTML}{666666} % Цвет футера
+\definecolor{footercolor}{HTML}{6666FF} % Цвет футера
 \definecolor{subsectioncolor}{HTML}{333333} % The color of subsections and places worked/studied
 \definecolor{contentcolor}{HTML}{2b2b2b} % The primary document color for content text
 
