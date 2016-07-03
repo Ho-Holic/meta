@@ -1,0 +1,1 @@
+xelatex cv.tex && start cv.pdf

@@ -47,10 +47,12 @@
 
 \definecolor{workperiodcolor}{HTML}{6A6A6A} % The color of the large sections
 \definecolor{sectioncolor}{HTML}{6A6A6A} % The color of the large sections
-\definecolor{footercolor}{HTML}{6666FF} % Цвет футера
+\definecolor{footercolor}{HTML}{666666} % Цвет футера
 \definecolor{subsectioncolor}{HTML}{333333} % The color of subsections and places worked/studied
 \definecolor{contentcolor}{HTML}{2b2b2b} % The primary document color for content text
-\definecolor{namecolor}{HTML}{2b2b2b} % The primary document color for content text
+
+\definecolor{namecolorleft}{HTML}{2b2b2b}
+\definecolor{namecolorright}{HTML}{6A6A6A}
 
 %----------------------------------------------------------------------------------------
 %  Шрифты
@@ -59,7 +61,9 @@
 % Папку со шрифтами
 \def\@fontdir{../fonts/ubuntu/}
 
-\def\@namefont{Ubuntu-L}
+\def\@namefontleft{Ubuntu-R}
+\def\@namefontright{Ubuntu-L}
+
 \def\@contentfont{Ubuntu-L}
 \def\@sectionfont{Ubuntu-L}
 \def\@subsectionfont{Ubuntu-L}
@@ -81,11 +85,20 @@
 %----------------------------------------------------------------------------------------
 
 % заголовок
-\newcommand{\namesection}[1]{ 
-\centering{ % Center the name
-\fontsize{40pt}{60pt} % Font size
-\fontspec[Path = \@fontdir]{\@namefont}
-\selectfont\color{namecolor}#1
+\newcommand{\namesection}[3]{ 
+\centering{
+\fontsize{40pt}{60pt}
+\fontspec[Path = \@fontdir]{\@namefontleft}
+\selectfont
+\color{namecolorleft}#1 
+\fontspec[Path = \@fontdir]{\@namefontright}
+\selectfont
+\color{namecolorright}#2
+}\\[10pt] 
+\centering{
+\fontsize{12pt}{12pt}
+\fontspec[Path = \@fontdir]{\@subsectionfont}
+\selectfont\color{footercolor}#3
 }\\[10pt] 
 %\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.6pt}} % разделительная черта (пока не нравится как выглядит)
 }
