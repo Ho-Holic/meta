@@ -90,17 +90,18 @@
 \fontsize{40pt}{60pt}
 \fontspec[Path = \@fontdir]{\@namefontleft}
 \selectfont
-\color{namecolorleft}#1 
+\color{namecolorleft}\hfill#1 
 \fontspec[Path = \@fontdir]{\@namefontright}
 \selectfont
 \color{namecolorright}#2
-}\\[10pt] 
+}\\%[10pt] 
+%\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.6pt}} % разделительная черта на всю страницу
+\color{footercolor}\hrulefill \\
 \centering{
 \fontsize{12pt}{12pt}
 \fontspec[Path = \@fontdir]{\@subsectionfont}
-\selectfont\color{footercolor}#3
+\selectfont\color{footercolor}\hfill#3
 }\\[10pt] 
-%\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.6pt}} % разделительная черта (пока не нравится как выглядит)
 }
 
 % подвал
