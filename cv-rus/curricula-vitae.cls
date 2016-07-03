@@ -40,6 +40,19 @@
 \pagestyle{fancy}
 
 %----------------------------------------------------------------------------------------
+%  Цвета
+%----------------------------------------------------------------------------------------
+
+\usepackage[usenames,dvipsnames]{xcolor} % Required for custom colors
+
+\definecolor{workperiodcolor}{HTML}{6A6A6A} % The color of the large sections
+\definecolor{sectioncolor}{HTML}{6A6A6A} % The color of the large sections
+\definecolor{footercolor}{HTML}{6666FF} % Цвет футера
+\definecolor{subsectioncolor}{HTML}{333333} % The color of subsections and places worked/studied
+\definecolor{contentcolor}{HTML}{2b2b2b} % The primary document color for content text
+\definecolor{namecolor}{HTML}{2b2b2b} % The primary document color for content text
+
+%----------------------------------------------------------------------------------------
 %  Шрифты
 %----------------------------------------------------------------------------------------
 
@@ -54,17 +67,7 @@
 \def\@addinfofont{Ubuntu-L}
 \def\@workperiodfont{Ubuntu-L}
 
-%----------------------------------------------------------------------------------------
-%  Цвета
-%----------------------------------------------------------------------------------------
-
-\usepackage[usenames,dvipsnames]{xcolor} % Required for custom colors
-
-\definecolor{workperiodcolor}{HTML}{6A6A6A} % The color of the large sections
-\definecolor{sectioncolor}{HTML}{6A6A6A} % The color of the large sections
-\definecolor{footercolor}{HTML}{6666FF} % Цвет футера
-\definecolor{subsectioncolor}{HTML}{333333} % The color of subsections and places worked/studied
-\definecolor{contentcolor}{HTML}{2b2b2b} % The primary document color for content text
+\setmainfont[Color=contentcolor, Path = \@fontdir]{\@contentfont}
 
 %----------------------------------------------------------------------------------------
 %  Общие комманды
@@ -82,7 +85,7 @@
 \centering{ % Center the name
 \fontsize{40pt}{60pt} % Font size
 \fontspec[Path = \@fontdir]{\@namefont}
-\selectfont #1
+\selectfont\color{namecolor}#1
 }\\[10pt] 
 %\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.6pt}} % разделительная черта (пока не нравится как выглядит)
 }
@@ -96,13 +99,6 @@
 }
 
 %----------------------------------------------------------------------------------------
-%  Content 
-%----------------------------------------------------------------------------------------
-\setmainfont[Color=contentcolor, Path = \@fontdir]{\@contentfont}
-
-%\setmainfont[Color=primary, Path = fonts/lato/,BoldItalicFont=Lato-RegIta,BoldFont=Lato-Reg,ItalicFont=Lato-LigIta]{Lato-Lig} % The primary 
-
-%----------------------------------------------------------------------------------------
 %  Section 
 %----------------------------------------------------------------------------------------
 
@@ -113,7 +109,7 @@
 \fontspec[Path = \@fontdir]{\@sectionfont}
 \fontsize{16pt}{24pt}
 \selectfont
-%\raggedright
+\raggedright
 %\uppercase
 }{}{0em}{}
 
