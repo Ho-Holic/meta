@@ -18,7 +18,7 @@
 \usepackage{fontspec} % Required for specifying custom fonts in XeLaTeX
 \usepackage{titlesec} % Required for customizing section/subsection/etc titles
 \usepackage{color} % Enable colors
-\usepackage{fancyhdr}
+\usepackage{fancyhdr} % заголовок и подвал
 
 %---------------------------------------------------------------------------------------
 %  Конфигурация страницы
@@ -65,6 +65,7 @@
 \def\@namefontright{Ubuntu-L}
 
 \def\@contentfont{Ubuntu-L}
+
 \def\@sectionfont{Ubuntu-L}
 \def\@subsectionfont{Ubuntu-L}
 \def\@mainsubsectionfont{Ubuntu-L}
@@ -72,6 +73,7 @@
 \def\@workperiodfont{Ubuntu-L}
 
 \setmainfont[Color=contentcolor, Path = \@fontdir]{\@contentfont}
+%\setmainfont[Path = \@fontdir]{\@contentfont}
 
 %----------------------------------------------------------------------------------------
 %  Общие комманды
@@ -105,6 +107,15 @@
 }
 
 % подвал
+\renewcommand{\footrulewidth}{0.5pt}
+\def\footrule{{
+  \vskip-\footruleskip\vskip-\footrulewidth
+  \color{footercolor}
+  \hrule\@width\headwidth\@height
+  \footrulewidth\vskip\footruleskip
+}}
+
+
 \newcommand{\footersection}[3]{
 \fancyfoot{}
 \fancyfoot[L]{\color{footercolor}#1}
