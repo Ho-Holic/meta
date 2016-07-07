@@ -65,6 +65,7 @@
 \def\@namefontright{Ubuntu-L}
 
 \def\@contentfont{Ubuntu-L}
+\def\@footerfont{Ubuntu-L}
 
 \def\@sectionfont{Ubuntu-L}
 \def\@subsectionfont{Ubuntu-L}
@@ -107,21 +108,37 @@
 }
 
 % подвал
-\renewcommand{\footrulewidth}{0.5pt}
-\def\footrule{{
-  \vskip-\footruleskip\vskip-\footrulewidth
-  \color{footercolor}
-  \hrule\@width\headwidth\@height
-  \footrulewidth\vskip\footruleskip
-}}
+
+% разделительная черта в подвале
+%\renewcommand{\footrulewidth}{0.5pt}
+%\def\footrule{{
+%  \vskip-\footruleskip\vskip-\footrulewidth
+%  \color{footercolor}
+%  \hrule\@width\headwidth\@height
+%  \footrulewidth\vskip\footruleskip
+%}}
 
 
 \newcommand{\footersection}[3]{
 \fancyfoot{}
-\fancyfoot[L]{\color{footercolor}#1}
-\fancyfoot[C]{\color{footercolor}#2}
-\fancyfoot[R]{\color{footercolor}#3}   
+\fancyfoot[L]{
+  \color{footercolor}
+  \fontspec[Path = \@fontdir]{\@footerfont}
+  \fontsize{8pt}{8pt}
+  \selectfont{#1}
 }
+\fancyfoot[C]{
+  \color{footercolor}
+  \fontspec[Path = \@fontdir]{\@footerfont}
+  \fontsize{8pt}{8pt}
+  \selectfont{#2}
+}
+\fancyfoot[R]{
+  \color{footercolor}
+  \fontspec[Path = \@fontdir]{\@footerfont}
+  \fontsize{8pt}{8pt}
+  \selectfont{#3}
+}}
 
 %----------------------------------------------------------------------------------------
 %  Section 
