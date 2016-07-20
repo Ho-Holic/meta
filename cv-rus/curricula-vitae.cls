@@ -27,6 +27,8 @@
 \usepackage{color} % Добавляем цвета
 \usepackage{fancyhdr} % заголовок и подвал
 \usepackage[hidelinks]{hyperref} % Гиперссылки, hidelinks - убирает глупую синюю обводку
+\usepackage[usenames,dvipsnames]{xcolor} % Required for custom colors
+\usepackage{qrcode} % генерация QR кода
 
 %---------------------------------------------------------------------------------------------------
 %  Конфигурация страницы
@@ -50,8 +52,6 @@
 %---------------------------------------------------------------------------------------------------
 %  Цвета
 %---------------------------------------------------------------------------------------------------
-
-\usepackage[usenames,dvipsnames]{xcolor} % Required for custom colors
 
 \definecolor{workperiodcolor}{HTML}{6A6A6A} % The color of the large sections
 \definecolor{sectioncolor}{HTML}{6A6A6A} % The color of the large sections
@@ -78,11 +78,9 @@
 \def\@sectionfont{Ubuntu-L}
 \def\@subsectionfont{Ubuntu-L}
 \def\@mainsubsectionfont{Ubuntu-L}
-\def\@addinfofont{Ubuntu-L}
 \def\@workperiodfont{Ubuntu-L}
 
 \setmainfont[Color=contentcolor, Path = \@fontdir]{\@contentfont}
-%\setmainfont[Path = \@fontdir]{\@contentfont}
 
 %---------------------------------------------------------------------------------------------------
 %  Общие комманды
@@ -179,17 +177,7 @@
 \color{subsectioncolor}
 \fontspec[Path = \@fontdir]{\@mainsubsectionfont}
 \fontsize{12pt}{12pt}
-\selectfont {#1} 
-\normalfont
-}
-
-% Used for describing the subsection either on the same line or underneath
-\newcommand{\addinfo}[1]{ 
-\color{subsectioncolor}
-\raggedright
-\fontspec[Path = \@fontdir]{\@addinfofont}
-\fontsize{11pt}{13pt}
-\selectfont {\hfill#1 \\} 
+\selectfont{#1} 
 \normalfont
 }
 
@@ -199,14 +187,15 @@
 \raggedright
 \fontspec[Path = \@fontdir]{\@workperiodfont}
 \fontsize{10pt}{12pt}
-\selectfont {#1\hfill#2\\} 
+\selectfont {#1\hfill#2} 
 \normalfont
 }
 
-\newcommand{\workplace}[4]{
-\mainsubsection{#1}    
-\addinfo{#2}
-\workperiod{#3}{#4}
+\newcommand{\workplace}[3]{  
+  \mainsubsection{#1}   
+
+  \workperiod{#2}{#3}
+
 }
 
 %---------------------------------------------------------------------------------------------------
