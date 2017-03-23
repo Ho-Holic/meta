@@ -60,7 +60,9 @@
 \definecolor{contentcolor}{HTML}{2b2b2b} % The primary document color for content text
 
 \definecolor{namecolorleft}{HTML}{2b2b2b}
-\definecolor{namecolorright}{HTML}{6A6A6A}
+\definecolor{namecolorright}{HTML}{2b2b2b}
+\definecolor{namecolorlogo}{HTML}{EEEEEE}
+
 
 %---------------------------------------------------------------------------------------------------
 %  Шрифты
@@ -68,17 +70,31 @@
 
 % Папку со шрифтами
 \def\@fontdir{../fonts/ubuntu/}
+\def\@fontdirsection{../fonts/poiretone/}
+\def\@fontdirsubsection{../fonts/ubuntu/}
+\def\@fontdirmainsubsection{../fonts/ubuntu/}
 
-\def\@namefontleft{Ubuntu-R}
-\def\@namefontright{Ubuntu-L}
+\def\@fontdirnameleft{../fonts/exo2/}
+\def\@fontdirnameright{../fonts/exo2/}
+\def\@fontdirnameunder{../fonts/exo2/}
+\def\@fontdirnamelogo{../fonts/ubuntu/}
+
+\def\@fontdirworkperiod{../fonts/ubuntu/}
+\def\@fontdirfooter{../fonts/exo2/}
+
+
+\def\@namefontleft{Exo2-Bold}
+\def\@namefontright{Exo2-ExtraLight}
+\def\@namefontunder{Exo2-Regular}
+\def\@namefontlogo{Ubuntu-R}
 
 \def\@contentfont{Ubuntu-L}
-\def\@footerfont{Ubuntu-L}
+\def\@footerfont{Exo2-Thin}
 
-\def\@sectionfont{Ubuntu-L}
-\def\@subsectionfont{Ubuntu-L}
-\def\@mainsubsectionfont{Ubuntu-L}
-\def\@workperiodfont{Ubuntu-L}
+\def\@sectionfont{PoiretOne-Regular}
+\def\@subsectionfont{Ubuntu-B}
+\def\@mainsubsectionfont{Ubuntu-B}
+\def\@workperiodfont{Ubuntu-LI}
 
 \setmainfont[Color=contentcolor, Path = \@fontdir]{\@contentfont}
 
@@ -94,22 +110,25 @@
 %---------------------------------------------------------------------------------------------------
 
 % заголовок
-\newcommand{\namesection}[3]{ 
+\newcommand{\namesection}[4]{ 
 \centering{
 \fontsize{40pt}{60pt}
-\fontspec[Path = \@fontdir]{\@namefontleft}
+\fontspec[Path = \@fontdirnamelogo]{\@namefontlogo}
 \selectfont
-\color{namecolorleft}\hfill#1 
-\fontspec[Path = \@fontdir]{\@namefontright}
+\color{namecolorlogo}#1
+\fontspec[Path = \@fontdirnameleft]{\@namefontleft}
 \selectfont
-\color{namecolorright}#2
+\color{namecolorleft}\hfill#2 
+\fontspec[Path = \@fontdirnameright]{\@namefontright}
+\selectfont
+\color{namecolorright}#3
 }\\%[10pt] 
 %\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.6pt}} % разделительная черта на всю страницу
 \color{footercolor}\hrulefill \\
 \centering{
 \fontsize{12pt}{12pt}
-\fontspec[Path = \@fontdir]{\@subsectionfont}
-\selectfont\color{footercolor}\hfill#3
+\fontspec[Path = \@fontdirnameunder]{\@namefontunder}
+\selectfont\color{footercolor}\hfill#4
 }\\[10pt] 
 }
 
@@ -126,7 +145,7 @@
 
 \newcommand{\footeritem}[1]{
   \color{footercolor}
-  \fontspec[Path = \@fontdir]{\@footerfont}
+  \fontspec[Path = \@fontdirfooter]{\@footerfont}
   \fontsize{8pt}{8pt}
   \selectfont{#1}
 }
@@ -138,6 +157,12 @@
   \fancyfoot[R]{\footeritem{#3}}
 }
 
+% QR code
+\newcommand{\qrcodesection}[1]{
+\color{namecolorleft}\qrcode[height=1in]{#1}  
+}
+
+
 %---------------------------------------------------------------------------------------------------
 %  Section 
 %---------------------------------------------------------------------------------------------------
@@ -146,8 +171,8 @@
 
 \titleformat{\section}{ 
 \color{sectioncolor}
-\fontspec[Path = \@fontdir]{\@sectionfont}
-\fontsize{16pt}{24pt}
+\fontspec[Path = \@fontdirsection]{\@sectionfont}
+\fontsize{20pt}{24pt}
 \selectfont
 \raggedright
 %\uppercase
@@ -161,7 +186,7 @@
 
 \titleformat{\subsection}{
 \color{subsectioncolor}
-\fontspec[Path = \@fontdir]{\@subsectionfont}
+\fontspec[Path = \@fontdirsubsection]{\@subsectionfont}
 \fontsize{12pt}{14pt}
 \selectfont
 %\bfseries
@@ -175,7 +200,7 @@
 % Used for creating subsections where a description is required on the same line
 \newcommand{\mainsubsection}[1]{ 
 \color{subsectioncolor}
-\fontspec[Path = \@fontdir]{\@mainsubsectionfont}
+\fontspec[Path = \@fontdirmainsubsection]{\@mainsubsectionfont}
 \fontsize{12pt}{12pt}
 \selectfont{#1} 
 \normalfont
@@ -185,7 +210,7 @@
 \newcommand{\workperiod}[2]{ 
 \color{workperiodcolor}
 \raggedright
-\fontspec[Path = \@fontdir]{\@workperiodfont}
+\fontspec[Path = \@fontdirworkperiod]{\@workperiodfont}
 \fontsize{10pt}{12pt}
 \selectfont {#1\hfill#2} 
 \normalfont
